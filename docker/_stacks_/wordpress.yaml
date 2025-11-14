@@ -1,0 +1,83 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json
+
+services:
+  wordpress-db:
+    image: mariadb:${WORDPRESS_MARIADB_VERSION:-11}
+    hostname: wordpress-db
+    restart: unless-stopped
+    ports: ['${WORDPRESS_DB_PORT:-3307}:3306']
+    environment:
+      MARIADB_ROOT_PASSWORD: ${WORDPRESS_DB_ROOT_PASSWORD:-supersecure}
+      MARIADB_DATABASE: ${WORDPRESS_DB_NAME:-wordpress}
+      MARIADB_USER: ${WORDPRESS_DB_USER:-wp_user}
+      MARIADB_PASSWORD: ${WORDPRESS_DB_PASSWORD:-wp_password}
+    volumes:
+      - wordpress_db_data:/var/lib/mysql:rw
+    healthcheck:
+      test: ['CMD-SHELL', 'mariadb-admin ping -h 127.0.0.1 -uroot -p\"$MARIADB_ROOT_PASSWORD\" || exit 1']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    extra_hosts: ['host.docker.internal:host-gateway']
+    networks: ['madebyaris-mcp-elementor_network']
+
+  wordpress:
+    image: wordpress:${WORDPRESS_IMAGE_TAG:-6.7.1-php8.2-apache}
+    hostname: wordpress
+    restart: unless-stopped
+    depends_on:
+      wordpress-db:
+        condition: service_healthy
+    ports: ['${WORDPRESS_PORT:-8080}:80']
+    environment:
+      WORDPRESS_DB_HOST: wordpress-db:3306
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME:-wordpress}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER:-wp_user}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD:-wp_password}
+      WORDPRESS_TABLE_PREFIX: ${WORDPRESS_TABLE_PREFIX:-wp_}
+      WORDPRESS_DEBUG: ${WORDPRESS_DEBUG:-1}
+      WORDPRESS_CONFIG_EXTRA: |
+        define( 'WP_HOME', '${WORDPRESS_URL:-http://localhost:8080}' );
+        define( 'WP_SITEURL', '${WORDPRESS_URL:-http://localhost:8080}' );
+        define( 'WP_DEBUG', true );
+        define( 'WP_DEBUG_LOG', true );
+        define( 'WP_DEBUG_DISPLAY', true );
+        @ini_set( 'display_errors', 1 );
+    volumes:
+      - wordpress_app_data:/var/www/html:rw
+      - ../../apps/wordpress/wp-content:/var/www/html/wp-content:rw
+      - ../wordpress/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini:ro
+    healthcheck:
+      test: ['CMD-SHELL', 'curl -f http://localhost/wp-login.php || exit 1']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    extra_hosts: ['host.docker.internal:host-gateway']
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+      - 1.1.1.1
+    networks: ['madebyaris-mcp-elementor_network']
+
+  wordpress-phpmyadmin:
+    image: phpmyadmin:5
+    hostname: wordpress-phpmyadmin
+    restart: unless-stopped
+    depends_on:
+      wordpress-db:
+        condition: service_started
+    environment:
+      PMA_HOST: wordpress-db
+      PMA_PORT: 3306
+      PMA_USER: ${WORDPRESS_DB_USER:-wp_user}
+      PMA_PASSWORD: ${WORDPRESS_DB_PASSWORD:-wp_password}
+    ports: ['${WORDPRESS_PHPMYADMIN_PORT:-8081}:80']
+    extra_hosts: ['host.docker.internal:host-gateway']
+    networks: ['madebyaris-mcp-elementor_network']
+
+volumes:
+  wordpress_app_data:
+    driver: local
+  wordpress_db_data:
+    driver: local
+

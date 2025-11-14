@@ -1,0 +1,45 @@
+# https://moonrepo.dev/docs/config/project
+# yaml-language-server: $schema=https://moonrepo.dev/schemas/project.json
+$schema: 'https://moonrepo.dev/schemas/project.json'
+
+type: application
+language: typescript
+stack: backend
+tags: ['app']
+id: 'wp-mcp-server'
+
+project:
+  name: 'wp-mcp-server'
+  description: 'WordPress-backed MCP server for Cursor integrations.'
+
+env:
+  WORDPRESS_URL: 'http://localhost:8080'
+
+tasks:
+  dev:
+    command: 'pnpm run dev'
+    options:
+      cache: false
+
+  build:
+    command: 'pnpm run build'
+    options:
+      cache: true
+
+  lint:
+    command: 'pnpm run lint'
+    options:
+      cache: true
+
+  check:
+    command: 'pnpm run check'
+    options:
+      cache: true
+
+  start-stdio:
+    command: 'pnpm run start:stdio'
+    deps: ['build']
+    options:
+      cache: false
+
+

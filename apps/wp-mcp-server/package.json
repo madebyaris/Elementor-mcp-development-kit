@@ -1,0 +1,27 @@
+{
+  "name": "wp-mcp-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Model Context Protocol server that surfaces WordPress data via tools.",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc --project tsconfig.json",
+    "start": "node dist/server.js",
+    "start:stdio": "node dist/server.js",
+    "lint": "biome lint src --write",
+    "check": "biome check src --write",
+    "cleanup": "pnpm dlx del-cli dist"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.22.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.4",
+    "dotenv": "^16.4.7",
+    "tsx": "^4.19.2",
+    "typescript": "catalog:"
+  }
+}
+

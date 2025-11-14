@@ -1,0 +1,146 @@
+/* figtree-latin-wght-normal */
+@font-face {
+    font-family: "Figtree Variable";
+    font-style: normal;
+    font-display: swap;
+    font-weight: 300 900;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/figtree:vf@latest/latin-wght-normal.woff2)
+        format("woff2-variations");
+    unicode-range:
+        U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* google-sans-code-latin-wght-normal */
+@font-face {
+    font-family: "Google Sans Code Variable";
+    font-style: normal;
+    font-display: swap;
+    font-weight: 300 800;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/google-sans-code:vf@latest/latin-wght-normal.woff2)
+        format("woff2-variations");
+    unicode-range:
+        U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+    --font-sans:
+        "Figtree Variable", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-mono:
+        "Google Sans Code Variable", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+    --font-brand: "Figtree Variable", ui-sans-serif, system-ui, "Arial", serif;
+
+    --color: #222;
+    --color-fade: #555;
+    --color-nav: #333;
+
+    --background: #f8f9f9;
+    --background-grey: #e9ecec;
+    --background-grey-embed: #dde3e3;
+
+    --foreground: #e0f7f7;
+    --foreground-hover: #b2dfdf;
+
+    --foreground-highlight: #1de9b6;
+    --color-highlight: #00695c;
+
+    --model-background: #f8f9f9;
+    --model-foreground: #e0f7f7;
+    --model-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+
+    --padding: 12px;
+    --padding_d2: 6px;
+    --padding_x2: 24px;
+
+    --model-blur: 10px;
+
+    --border: #b2dfdf;
+    --border-nav: #80cbc4;
+
+    --radius: 16px;
+
+    --anchor: #009688;
+    --hover: #26a69a;
+
+    /* base16 tomorrow */
+    --chroma-base00: #e9ecec;
+    --chroma-base01: #e0e0e0;
+    --chroma-base02: rgba(159, 218, 159, 0.2);
+    --chroma-base03: #8e908c;
+    --chroma-base04: #969896;
+    --chroma-base05: #4d4d4c;
+    --chroma-base06: #282a2e;
+    --chroma-base07: #1d1f21;
+    --chroma-base08: #c82829;
+    --chroma-base09: #f5871f;
+    --chroma-base0A: #eab700;
+    --chroma-base0B: #718c00;
+    --chroma-base0C: #3e999f;
+    --chroma-base0D: #4271ae;
+    --chroma-base0E: #8959a8;
+    --chroma-base0F: #a3685a;
+
+    /* shortcodes */
+    --callout-info-backgound: #954ce3;
+    --callout-info-foreground: rgba(0, 0, 0, 0.08);
+    --callout-info-color: #ffffff;
+    --callout-info-anchor: #d2aefc;
+    --callout-info-anchor-text-shadow: 0.4px 0 0.8px black;
+}
+
+:root[data-color="dark"] {
+    --color: #e0f2f1;
+    --color-fade: #b2dfdb;
+    --color-nav: #b2dfdb;
+
+    --background: #1a2323;
+    --background-grey: #223232;
+    --background-grey-embed: #294040;
+
+    --foreground: #263d3d;
+    --foreground-hover: #355959;
+
+    --model-background: #1a2323;
+    --model-foreground: #223232;
+    --model-box-shadow: 0 8px 32px 0 rgba(0, 150, 136, 0.1);
+
+    --border: #355959;
+    --border-nav: #26a69a;
+
+    --anchor: #1de9b6;
+    --hover: #00bfae;
+
+    /* base16 tomorrow night */
+    --chroma-base00: var(--background-grey);
+    --chroma-base01: #393939;
+    --chroma-base02: rgba(159, 218, 159, 0.1);
+    --chroma-base03: #999999;
+    --chroma-base04: #b4b7b4;
+    --chroma-base05: #cccccc;
+    --chroma-base06: #e0e0e0;
+    --chroma-base07: #ffffff;
+    --chroma-base08: #f2777a;
+    --chroma-base09: #f99157;
+    --chroma-base0A: #ffcc66;
+    --chroma-base0B: #99cc99;
+    --chroma-base0C: #66cccc;
+    --chroma-base0D: #6699cc;
+    --chroma-base0E: #cc99cc;
+    --chroma-base0F: #a3685a;
+}
+
+.site-logo {
+    text-transform: uppercase;
+    font-family: var(--font-brand);
+    font-size: 1.5em;
+    color: transparent;
+    -webkit-text-stroke: 0.5px var(--border);
+    background: transparent;
+    letter-spacing: 3px;
+    background: linear-gradient(45deg, #009688, #26a69a, #b2dfdb, #e0f2f1, #00695c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}

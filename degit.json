@@ -1,0 +1,20 @@
+[
+    {
+        "action": "remove",
+        "files": [
+            ".github",
+            "apps",
+            "builder",
+            "docsite",
+            "go.mod",
+            "go.sum",
+            "hugo.yaml",
+            "makezip.sh",
+            "packages",
+            "pnpm-lock.yaml",
+            "build-templates.sh",
+            "README.md",
+            "templates"
+        ]
+    }
+]

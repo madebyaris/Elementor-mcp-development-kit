@@ -1,0 +1,167 @@
+node_modules
+/.fleet
+/.idea
+/.pnp
+/.husky
+/.unikraft
+.pnp.js
+.DS_Store
+.DS_Store?
+.rollup.cache
+.cache
+.output
+.pnpm/
+.temp/
+.tmp/
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*tsbuildinfo
+*.bak
+coverage/
+temp/
+tmp/
+
+.husky
+.pnpm-store
+.vite-inspect
+testdata/
+vendor/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# VSCode
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+
+# SQLite
+*.sqlite*
+*.sqlite3*
+*.db
+
+# Projects
+_data/
+build/
+dist/
+dist-ssr/
+.astro/
+.data
+.dist
+.cache
+.output
+.client
+.build
+.react-router
+.wrangler
+
+# Vite & Vitest config
+vite.config.*
+!vite.config.ts
+vitest.config.*
+!vitest.config.ts
+!vitest.config.mts
+vitest.workspace.*
+!vitest.workspace.ts
+!vitest.workspace.mts
+
+# envars
+.env*
+!.env.example
+compose.env*
+!compose.env.example
+
+# Disable this line in your real app
+playwright/.cache/
+playwright-report/
+tests-results/
+test-results/
+blob-report/
+.playwright/
+
+# Sentry Config File
+.sentryclirc
+
+# Storybook
+*storybook.log
+storybook-static/
+
+# Miscellaneous
+pnpm-exec-summary.json
+slim.report.json
+
+# Terraform
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate*
+terraform.tfvars*
+!terraform.tfvars.example
+
+# moon
+.moon/cache
+.moon/docker
+
+# python
+__pycache__/
+
+# Hugo files
+/docsite/public/
+/docsite/static/templates/
+/docsite/static/templates.json
+**/resources/_gen/
+__generated__/
+hugo_stats.json
+hugo.exe
+hugo.darwin
+hugo.linux
+.hugo_build.lock
+.hugo_cache/
+
+# Personal Note
+AUDIT.md
+TODO.md
+
+# SDD Specs (optional - uncomment if you want to track specs in git)
+# specs/
+
+# SDD cache
+.sdd/cache/
+
+# Cursor
+.cursor/cache/
+
+# WordPress
+apps/wordpress/wp-content/uploads/
+apps/wordpress/wp-content/upgrade/
+apps/wordpress/wp-content/backup-db/
+apps/wordpress/wp-content/backups/
+apps/wordpress/wp-content/cache/
+apps/wordpress/wp-content/debug.log
+apps/wordpress/wp-content/wp-config.php
+apps/wordpress/wp-content/.htaccess
+apps/wordpress/wp-content/mu-plugins/*.backup
+apps/wordpress/wp-content/plugins/hello.php
+apps/wordpress/wp-content/plugins/akismet/
+apps/wordpress/wp-content/themes/twenty*/
+apps/wordpress/wp-content/blogs.dir/
+apps/wordpress/wp-content/advanced-cache.php
+apps/wordpress/wp-content/wp-cache-config.php
+
+# WordPress Docker volumes
+wordpress_app_data/
+wordpress_db_data/
+
+# MCP Server build outputs
+apps/wp-mcp-server/dist/
+apps/wp-mcp-server/*.log
+apps/wp-mcp-server/.env
+apps/wp-mcp-server/.env.local

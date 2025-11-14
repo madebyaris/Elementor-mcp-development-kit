@@ -1,0 +1,30 @@
+pages:
+  - title: Overview
+  - title: Introduction
+
+groups:
+  - title: Getting Started
+    pages:
+      - title: Create New Project
+      - title: Available Templates
+      - title: Project Structure
+      - title: Configuration
+  - title: Dependencies
+    pages:
+      - title: Managing Dependencies
+      - title: Updating and Cleanup
+  - title: Development
+    pages:
+      - title: Common Tasks
+      - title: CLI Commands
+      - title: Moonrepo Testing
+      - title: Workflow
+  - title: Contributions
+    pages:
+      - title: Contribution Guidelines
+      - title: Pull Request Guidelines
+  - title: Reference
+    pages:
+      - title: FAQ
+      - title: Troubleshooting
+      - title: External References

@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=https://json.schemastore.org/hugo.json
+
+enableGitInfo: true
+enableRobotsTXT: true
+cleanDestinationDir: true
+disableHugoGeneratorInject: true
+defaultContentLanguage: en
+timeZone: Asia/Jakarta
+
+# Path configurations
+archetypeDir: docsite/archetypes
+assetDir: docsite/assets
+dataDir: docsite/data
+i18nDir: docsite/i18n
+layoutDir: docsite/layouts
+resourceDir: docsite/resources
+themesDir: docsite/themes
+contentDir: docsite/content
+publishDir: docsite/public
+staticDir: docsite/static
+
+languages:
+  en:
+    weight: 1
+    languageCode: en-US
+    languageName: English
+    # contentDir: docsite/content/en
+    contentDir: docsite/content
+    title: Monorepo
+    params:
+      description: Zero One Group Open Source
+
+# To omit the Google Analytics script, put a ~ in place of the G-XXXXXXXXXX below.
+# Replace with your Google Analytics ID to enable Google Analytics.
+services:
+  googleAnalytics:
+    ID: ~
+
+params:
+  project:
+    # To omit the startYear, put a ~ in its place.
+    startYear: ~
+    presentYear: 2025
+    github:
+      repo: zero-one-group/monorepo
+    themeColor:
+      light: '#ffffff'
+      dark: '#101010'
+
+  author:
+    name: Zero One Group
+    url: https://github.com/zero-one-group
+
+  home:
+    heading: Zero One
+    headingSegment2: Group
+    description: Monorepo Documentation
+    getStartedPath: overview/
+
+markup:
+  highlight:
+    noClasses: false
+  goldmark:
+    renderer:
+      unsafe: true
+    parser:
+      attribute:
+        block: true
+        title: true
