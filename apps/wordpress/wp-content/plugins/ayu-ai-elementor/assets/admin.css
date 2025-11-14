@@ -1,0 +1,360 @@
+/* General Styles */
+.ayu-welcome {
+	background: #fff;
+	padding: 20px;
+	border: 1px solid #ccd0d4;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	margin-top: 20px;
+}
+
+.ayu-token-form {
+	background: #fff;
+	padding: 20px;
+	border: 1px solid #ccd0d4;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	margin-top: 20px;
+}
+
+.ayu-tokens-list {
+	margin-top: 30px;
+}
+
+.ayu-modal {
+	display: none;
+	position: fixed;
+	z-index: 100000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.ayu-modal-content {
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+	max-width: 600px;
+	position: relative;
+}
+
+.ayu-modal-close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.ayu-modal-close:hover {
+	color: #000;
+}
+
+#ayu-token-display {
+	font-family: monospace;
+	font-size: 14px;
+	padding: 10px;
+	width: 100%;
+}
+
+/* Audit Log Styles */
+.ayu-page-title {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 20px;
+}
+
+.ayu-badge {
+	display: inline-block;
+	padding: 4px 12px;
+	background: #2271b1;
+	color: #fff;
+	border-radius: 12px;
+	font-size: 13px;
+	font-weight: 500;
+}
+
+.ayu-logs-controls {
+	background: #fff;
+	padding: 15px 20px;
+	border: 1px solid #ccd0d4;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.ayu-limit-selector {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.ayu-limit-selector label {
+	font-weight: 500;
+	color: #1d2327;
+}
+
+.ayu-select {
+	padding: 6px 12px;
+	border: 1px solid #8c8f94;
+	border-radius: 4px;
+	background: #fff;
+	font-size: 14px;
+	cursor: pointer;
+	transition: border-color 0.15s ease-in-out;
+}
+
+.ayu-select:hover {
+	border-color: #2271b1;
+}
+
+.ayu-select:focus {
+	border-color: #2271b1;
+	box-shadow: 0 0 0 1px #2271b1;
+	outline: none;
+}
+
+.ayu-description {
+	color: #646970;
+	font-size: 13px;
+}
+
+.ayu-empty-state {
+	background: #fff;
+	padding: 60px 20px;
+	text-align: center;
+	border: 1px solid #ccd0d4;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.ayu-empty-icon {
+	font-size: 64px;
+	margin-bottom: 20px;
+}
+
+.ayu-empty-state h2 {
+	margin: 0 0 10px;
+	color: #1d2327;
+	font-size: 20px;
+}
+
+.ayu-empty-state p {
+	margin: 0;
+	color: #646970;
+	font-size: 14px;
+}
+
+.ayu-logs-container {
+	background: #fff;
+	border: 1px solid #ccd0d4;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	overflow: hidden;
+}
+
+.ayu-logs-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.ayu-logs-table thead {
+	background: #f6f7f7;
+	border-bottom: 2px solid #dcdcde;
+}
+
+.ayu-logs-table th {
+	padding: 12px 16px;
+	text-align: left;
+	font-weight: 600;
+	font-size: 13px;
+	color: #1d2327;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.ayu-logs-table tbody tr {
+	border-bottom: 1px solid #f0f0f1;
+	transition: background-color 0.15s ease-in-out;
+}
+
+.ayu-logs-table tbody tr:hover {
+	background: #f6f7f7;
+}
+
+.ayu-logs-table tbody tr.ayu-success {
+	border-left: 3px solid #00a32a;
+}
+
+.ayu-logs-table tbody tr.ayu-error {
+	border-left: 3px solid #d63638;
+}
+
+.ayu-logs-table td {
+	padding: 14px 16px;
+	font-size: 14px;
+	color: #1d2327;
+	vertical-align: top;
+}
+
+.ayu-col-time {
+	width: 180px;
+}
+
+.ayu-time-primary {
+	font-weight: 500;
+	color: #1d2327;
+	margin-bottom: 4px;
+}
+
+.ayu-time-secondary {
+	font-size: 12px;
+	color: #646970;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.ayu-time-ago {
+	color: #8c8f94;
+}
+
+.ayu-col-user {
+	width: 200px;
+}
+
+.ayu-user-info {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.ayu-user-name {
+	font-weight: 500;
+	color: #1d2327;
+}
+
+.ayu-user-email {
+	font-size: 12px;
+	color: #646970;
+}
+
+.ayu-col-tool {
+	width: 250px;
+}
+
+.ayu-tool-name {
+	background: #f0f0f1;
+	padding: 4px 8px;
+	border-radius: 4px;
+	font-size: 12px;
+	color: #1d2327;
+	font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+}
+
+.ayu-col-status {
+	width: 120px;
+}
+
+.ayu-status-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 4px 10px;
+	border-radius: 12px;
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.ayu-status-success {
+	background: #d4edda;
+	color: #155724;
+}
+
+.ayu-status-error {
+	background: #f8d7da;
+	color: #721c24;
+}
+
+.ayu-status-icon {
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.ayu-col-ip {
+	width: 150px;
+}
+
+.ayu-ip-address {
+	background: #f0f0f1;
+	padding: 4px 8px;
+	border-radius: 4px;
+	font-size: 12px;
+	color: #1d2327;
+	font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+}
+
+.ayu-logs-footer {
+	margin-top: 20px;
+	padding: 12px 16px;
+	background: #f6f7f7;
+	border: 1px solid #ccd0d4;
+	border-top: none;
+}
+
+.ayu-logs-info {
+	margin: 0;
+	font-size: 13px;
+	color: #646970;
+}
+
+/* Token Form Styles */
+.ayu-select-all-wrapper {
+	margin-bottom: 12px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #dcdcde;
+}
+
+.ayu-select-all-label {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	cursor: pointer;
+	font-size: 14px;
+	color: #1d2327;
+}
+
+.ayu-select-all-label:hover {
+	color: #2271b1;
+}
+
+.ayu-select-all-checkbox {
+	margin: 0;
+	cursor: pointer;
+}
+
+.ayu-scopes-list {
+	margin-top: 8px;
+}
+
+.ayu-scopes-list label {
+	display: block;
+	margin-bottom: 8px;
+	font-size: 14px;
+	cursor: pointer;
+	transition: color 0.15s ease-in-out;
+}
+
+.ayu-scopes-list label:hover {
+	color: #2271b1;
+}
+
+.ayu-scopes-list input[type="checkbox"] {
+	margin-right: 8px;
+	cursor: pointer;
+}
+

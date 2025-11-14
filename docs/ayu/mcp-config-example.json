@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "ayu-ai-elementor": {
+      "command": "pnpm",
+      "args": ["--filter", "wp-mcp-server-ayu", "start:stdio"],
+      "cwd": "/Volumes/app/self-project/mcp-research-elementor",
+      "env": {
+        "WORDPRESS_URL": "http://localhost:8080",
+        "AYU_TOKEN": "your-token-here"
+      }
+    }
+  }
+}
+

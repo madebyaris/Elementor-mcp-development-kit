@@ -1,0 +1,38 @@
+$schema: 'https://moonrepo.dev/schemas/project.json'
+
+type: application
+language: typescript
+stack: backend
+tags: ['app', 'mcp-server']
+
+id: 'wp-mcp-server-ayu'
+
+project:
+  name: 'wp-mcp-server-ayu'
+  description: 'MCP server for AYU AI Elementor WordPress integration'
+
+env:
+  WORDPRESS_URL: 'http://localhost:8080'
+  AYU_TOKEN: ''
+
+tasks:
+  dev:
+    command: 'pnpm run dev'
+    options:
+      envFile: '.env'
+      cache: false
+
+  build:
+    command: 'pnpm run build'
+    options:
+      envFile: '.env'
+      cache: true
+
+  start-stdio:
+    command: 'pnpm run start:stdio'
+    options:
+      envFile: '.env'
+      cache: false
+      outputStyle: 'buffer-only-failure'
+      interactive: true
+

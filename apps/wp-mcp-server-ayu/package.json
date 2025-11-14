@@ -1,0 +1,28 @@
+{
+  "name": "wp-mcp-server-ayu",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "MCP server for AYU AI Elementor - WordPress automation via Cursor",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc --project tsconfig.json",
+    "start:stdio": "node dist/server.js",
+    "lint": "biome lint . --write",
+    "check": "biome check . --write",
+    "cleanup": "pnpm dlx del-cli node_modules dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.22.0",
+    "dotenv": "^17.2.3",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "catalog:",
+    "npm-check-updates": "catalog:",
+    "tsx": "^4.16.2",
+    "typescript": "catalog:"
+  }
+}
+
